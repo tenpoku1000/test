@@ -1,0 +1,224 @@
+
+dumpbin bootx64.efi /DIRECTIVES /DISASM /HEADERS /RAWDATA /RELOCATIONS /SYMBOLS > efi_main.txt
+
+Microsoft (R) COFF/PE Dumper Version 14.23.28105.4
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file bootx64.efi
+
+PE signature found
+
+File Type: DLL
+
+FILE HEADER VALUES
+            8664 machine (x64)
+               4 number of sections
+        5D904D72 time date stamp Sun Sep 29 15:21:38 2019
+               0 file pointer to symbol table
+               0 number of symbols
+              F0 size of optional header
+            2022 characteristics
+                   Executable
+                   Application can handle large (>2GB) addresses
+                   DLL
+
+OPTIONAL HEADER VALUES
+             20B magic # (PE32+)
+           14.23 linker version
+             200 size of code
+             600 size of initialized data
+               0 size of uninitialized data
+            1030 entry point (0000000180001030)
+            1000 base of code
+       180000000 image base (0000000180000000 to 0000000180004FFF)
+            1000 section alignment
+             200 file alignment
+            0.00 operating system version
+            0.00 image version
+            1.00 subsystem version
+               0 Win32 version
+            5000 size of image
+             400 size of headers
+            E7B0 checksum
+               A subsystem (EFI Application)
+               0 DLL characteristics
+          100000 size of stack reserve
+            1000 size of stack commit
+          100000 size of heap reserve
+            1000 size of heap commit
+               0 loader flags
+              10 number of directories
+               0 [       0] RVA [size] of Export Directory
+               0 [       0] RVA [size] of Import Directory
+               0 [       0] RVA [size] of Resource Directory
+               0 [       0] RVA [size] of Exception Directory
+               0 [       0] RVA [size] of Certificates Directory
+            4000 [       C] RVA [size] of Base Relocation Directory
+            2070 [      1C] RVA [size] of Debug Directory
+               0 [       0] RVA [size] of Architecture Directory
+               0 [       0] RVA [size] of Global Pointer Directory
+               0 [       0] RVA [size] of Thread Storage Directory
+               0 [       0] RVA [size] of Load Configuration Directory
+               0 [       0] RVA [size] of Bound Import Directory
+               0 [       0] RVA [size] of Import Address Table Directory
+               0 [       0] RVA [size] of Delay Import Directory
+               0 [       0] RVA [size] of COM Descriptor Directory
+               0 [       0] RVA [size] of Reserved Directory
+
+
+SECTION HEADER #1
+   .text name
+      94 virtual size
+    1000 virtual address (0000000180001000 to 0000000180001093)
+     200 size of raw data
+     400 file pointer to raw data (00000400 to 000005FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+60000020 flags
+         Code
+         Execute Read
+
+  0000000180001000: 48 83 EC 28        sub         rsp,28h
+  0000000180001004: 0F 1F 40 00        nop         dword ptr [rax]
+  0000000180001008: 0F 1F 84 00 00 00  nop         dword ptr [rax+rax+0000000000000000h]
+                    00 00
+  0000000180001010: 48 8B 05 F9 1F 00  mov         rax,qword ptr [0000000180003010h]
+                    00
+  0000000180001017: 48 8D 54 24 30     lea         rdx,[rsp+30h]
+  000000018000101C: 48 8B C8           mov         rcx,rax
+  000000018000101F: FF 50 08           call        qword ptr [rax+8]
+  0000000180001022: 48 39 05 DF 1F 00  cmp         qword ptr [0000000180003008h],rax
+                    00
+  0000000180001029: 75 E5              jne         0000000180001010
+  000000018000102B: 48 83 C4 28        add         rsp,28h
+  000000018000102F: C3                 ret
+  0000000180001030: 48 83 EC 28        sub         rsp,28h
+  0000000180001034: 48 8B 42 58        mov         rax,qword ptr [rdx+58h]
+  0000000180001038: 48 89 05 E1 1F 00  mov         qword ptr [0000000180003020h],rax
+                    00
+  000000018000103F: 48 8B 42 30        mov         rax,qword ptr [rdx+30h]
+  0000000180001043: 48 89 05 C6 1F 00  mov         qword ptr [0000000180003010h],rax
+                    00
+  000000018000104A: 48 8B 42 40        mov         rax,qword ptr [rdx+40h]
+  000000018000104E: 48 89 15 C3 1F 00  mov         qword ptr [0000000180003018h],rdx
+                    00
+  0000000180001055: 48 8B C8           mov         rcx,rax
+  0000000180001058: 48 8D 15 A1 0F 00  lea         rdx,[0000000180002000h]
+                    00
+  000000018000105F: 48 89 05 C2 1F 00  mov         qword ptr [0000000180003028h],rax
+                    00
+  0000000180001066: FF 50 08           call        qword ptr [rax+8]
+  0000000180001069: FF 15 91 1F 00 00  call        qword ptr [0000000180003000h]
+  000000018000106F: 48 8B 05 AA 1F 00  mov         rax,qword ptr [0000000180003020h]
+                    00
+  0000000180001076: 45 33 C9           xor         r9d,r9d
+  0000000180001079: 48 8B 15 88 1F 00  mov         rdx,qword ptr [0000000180003008h]
+                    00
+  0000000180001080: 45 33 C0           xor         r8d,r8d
+  0000000180001083: 33 C9              xor         ecx,ecx
+  0000000180001085: FF 50 68           call        qword ptr [rax+68h]
+  0000000180001088: 48 8B 05 79 1F 00  mov         rax,qword ptr [0000000180003008h]
+                    00
+  000000018000108F: 48 83 C4 28        add         rsp,28h
+  0000000180001093: C3                 ret
+
+RAW DATA #1
+  0000000180001000: 48 83 EC 28 0F 1F 40 00 0F 1F 84 00 00 00 00 00  H.i(..@.........
+  0000000180001010: 48 8B 05 F9 1F 00 00 48 8D 54 24 30 48 8B C8 FF  H..u...H.T$0H.Ey
+  0000000180001020: 50 08 48 39 05 DF 1F 00 00 75 E5 48 83 C4 28 C3  P.H9.s...uaH.A(A
+  0000000180001030: 48 83 EC 28 48 8B 42 58 48 89 05 E1 1F 00 00 48  H.i(H.BXH..a...H
+  0000000180001040: 8B 42 30 48 89 05 C6 1F 00 00 48 8B 42 40 48 89  .B0H..A...H.B@H.
+  0000000180001050: 15 C3 1F 00 00 48 8B C8 48 8D 15 A1 0F 00 00 48  .A...H.EH..!...H
+  0000000180001060: 89 05 C2 1F 00 00 FF 50 08 FF 15 91 1F 00 00 48  ..A...yP.y.....H
+  0000000180001070: 8B 05 AA 1F 00 00 45 33 C9 48 8B 15 88 1F 00 00  ..a...E3EH......
+  0000000180001080: 45 33 C0 33 C9 FF 50 68 48 8B 05 79 1F 00 00 48  E3A3EyPhH..y...H
+  0000000180001090: 83 C4 28 C3                                      .A(A
+
+SECTION HEADER #2
+  .rdata name
+      EC virtual size
+    2000 virtual address (0000000180002000 to 00000001800020EB)
+     200 size of raw data
+     600 file pointer to raw data (00000600 to 000007FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+RAW DATA #2
+  0000000180002000: 57 00 68 00 65 00 6E 00 20 00 79 00 6F 00 75 00  W.h.e.n. .y.o.u.
+  0000000180002010: 20 00 70 00 72 00 65 00 73 00 73 00 20 00 61 00   .p.r.e.s.s. .a.
+  0000000180002020: 6E 00 79 00 20 00 6B 00 65 00 79 00 2C 00 20 00  n.y. .k.e.y.,. .
+  0000000180002030: 74 00 68 00 65 00 20 00 73 00 79 00 73 00 74 00  t.h.e. .s.y.s.t.
+  0000000180002040: 65 00 6D 00 20 00 77 00 69 00 6C 00 6C 00 20 00  e.m. .w.i.l.l. .
+  0000000180002050: 72 00 65 00 62 00 6F 00 6F 00 74 00 2E 00 0A 00  r.e.b.o.o.t.....
+  0000000180002060: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+  0000000180002070: 00 00 00 00 72 4D 90 5D 00 00 00 00 0D 00 00 00  ....rM.]........
+  0000000180002080: 60 00 00 00 8C 20 00 00 8C 06 00 00 00 00 00 00  `.... ..........
+  0000000180002090: 00 10 00 00 94 00 00 00 2E 74 65 78 74 24 6D 6E  .........text$mn
+  00000001800020A0: 00 00 00 00 00 20 00 00 8C 00 00 00 2E 72 64 61  ..... .......rda
+  00000001800020B0: 74 61 00 00 8C 20 00 00 60 00 00 00 2E 72 64 61  ta... ..`....rda
+  00000001800020C0: 74 61 24 7A 7A 7A 64 62 67 00 00 00 00 30 00 00  ta$zzzdbg....0..
+  00000001800020D0: 08 00 00 00 2E 64 61 74 61 00 00 00 08 30 00 00  .....data....0..
+  00000001800020E0: 28 00 00 00 2E 62 73 73 00 00 00 00              (....bss....
+
+  Debug Directories
+
+        Time Type        Size      RVA  Pointer
+    -------- ------- -------- -------- --------
+    5D904D72 coffgrp       60 0000208C      68C
+
+SECTION HEADER #3
+   .data name
+      30 virtual size
+    3000 virtual address (0000000180003000 to 000000018000302F)
+     200 size of raw data
+     800 file pointer to raw data (00000800 to 000009FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+C0000040 flags
+         Initialized Data
+         Read Write
+
+RAW DATA #3
+  0000000180003000: 00 10 00 80 01 00 00 00 00 00 00 00 00 00 00 00  ................
+  0000000180003010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+  0000000180003020: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+
+SECTION HEADER #4
+  .reloc name
+       C virtual size
+    4000 virtual address (0000000180004000 to 000000018000400B)
+     200 size of raw data
+     A00 file pointer to raw data (00000A00 to 00000BFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+42000040 flags
+         Initialized Data
+         Discardable
+         Read Only
+
+RAW DATA #4
+  0000000180004000: 00 30 00 00 0C 00 00 00 00 A0 00 00              .0..........
+
+BASE RELOCATIONS #4
+    3000 RVA,        C SizeOfBlock
+       0  DIR64      0000000180001000
+       0  ABS                        
+
+  Summary
+
+        1000 .data
+        1000 .rdata
+        1000 .reloc
+        1000 .text
